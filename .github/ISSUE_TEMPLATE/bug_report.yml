@@ -1,0 +1,225 @@
+name: 🐛 Bug Report
+description: Report a bug or defect in the system
+title: "[BUG]: "
+labels: ["bug", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report Template
+
+        Thank you for reporting a bug! Please provide as much detail as possible to help us reproduce and fix the issue.
+
+        ---
+
+  - type: input
+    id: bug-id
+    attributes:
+      label: Bug ID (Optional)
+      description: "If tracking in external system, provide ID (e.g., BUG-001)"
+      placeholder: "BUG-XXX-001"
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Bug Summary
+      description: Brief, clear description of the bug
+      placeholder: "API returns 500 error when filtering resources by workzone"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this bug?
+      options:
+        - Critical - System down, data loss, security issue
+        - High - Major feature broken, workaround difficult
+        - Medium - Feature partially broken, workaround available
+        - Low - Minor issue, cosmetic, easy workaround
+      default: 2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgently should this be fixed?
+      options:
+        - Urgent - Fix immediately (production down)
+        - High - Fix in current sprint
+        - Medium - Fix in next sprint
+        - Low - Fix when convenient
+      default: 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Where did you encounter this bug?
+      value: |
+        - **Environment**: Production / Staging / Development
+        - **Python Version**: 3.12
+        - **Package Version**:
+        - **OS**: macOS / Linux / Windows
+        - **Browser** (if applicable):
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the bug
+      value: |
+        1. Navigate to...
+        2. Click on...
+        3. Enter data...
+        4. Observe error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen?
+      placeholder: "API should return filtered resources with status 200"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+      placeholder: "API returns 500 Internal Server Error with stack trace"
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-logs
+    attributes:
+      label: Error Messages / Logs
+      description: Include relevant error messages, stack traces, or log output
+      placeholder: |
+        ```
+        Traceback (most recent call last):
+          File "service.py", line 42, in get_resources
+            ...
+        ValueError: Invalid workzone ID
+        ```
+      render: shell
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / Videos (Optional)
+      description: Add screenshots or videos to help explain the problem
+      placeholder: "Drag and drop images or paste URLs here"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context about the problem
+      placeholder: |
+        - This started happening after deployment on 2025-11-15
+        - Only affects users with specific permissions
+        - Related to issue #123
+
+  - type: dropdown
+    id: affected-component
+    attributes:
+      label: Affected Component
+      description: Which part of the system is affected?
+      options:
+        - API Endpoints
+        - CLI Commands
+        - Web Interface
+        - Database / Data Layer
+        - External API Integration
+        - Configuration
+        - Authentication / Authorization
+        - Background Jobs / Tasks
+        - Tests
+        - Documentation
+        - Multiple Components
+        - Unknown
+      multiple: true
+
+  - type: input
+    id: feature-slice
+    attributes:
+      label: Feature Slice / Module
+      description: Which feature slice or module is affected?
+      placeholder: "workzones, resources, transform, etc."
+
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: Reproducibility
+      description: How consistently can you reproduce this bug?
+      options:
+        - Always - Happens every time
+        - Sometimes - Happens intermittently
+        - Rarely - Happened once or twice
+        - Unable to reproduce
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround (Optional)
+      description: Is there a temporary workaround for this bug?
+      placeholder: "Can use alternative API endpoint /api/v2/resources instead"
+
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Suggested Fix (Optional)
+      description: If you have ideas on how to fix this, please share
+      placeholder: "The issue appears to be in service.py line 42 where workzone_id is not validated before querying"
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 🔍 Investigation Checklist
+
+        For developers investigating this bug:
+
+        - [ ] Reproduced the bug locally
+        - [ ] Identified root cause
+        - [ ] Checked for related bugs or issues
+        - [ ] Reviewed recent changes that might have caused this
+        - [ ] Identified affected users/systems
+        - [ ] Determined fix complexity and effort
+        - [ ] Created fix plan with test strategy
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## ✅ Resolution Checklist
+
+        Before closing this bug:
+
+        - [ ] Bug fixed and tested locally
+        - [ ] Unit tests added to prevent regression
+        - [ ] Integration tests passing
+        - [ ] Code reviewed and approved
+        - [ ] Fix deployed to staging/production
+        - [ ] Verified fix in affected environment
+        - [ ] Release notes updated
+        - [ ] Stakeholders notified

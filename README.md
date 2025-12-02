@@ -60,7 +60,9 @@ Templates/
 ├── CLAUDE.md                        # Instructions for Claude Code
 ├── .github/
 │   └── ISSUE_TEMPLATE/
-│       ├── user_story.yml           # GitHub issue template for user stories
+│       ├── user_story.yml           # User story template
+│       ├── bug_report.yml           # Bug report template
+│       ├── technical_debt.yml       # Technical debt template
 │       └── config.yml               # Issue template configuration
 └── docs/
     ├── ARCHITECTURE.md              # Vertical slice architecture template

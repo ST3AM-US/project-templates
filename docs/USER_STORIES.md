@@ -68,13 +68,35 @@ This project uses GitHub Issues to manage user stories following the **3 C's** m
 - [ ] Documentation updated
 ```
 
+### Issue Templates Available
+
+This project provides three GitHub issue templates:
+
+1. **🎯 User Story** - For new features and functionality
+   - Use the "As a, I want, So that" format
+   - Include acceptance criteria checklist
+   - Track with story points and sprint assignment
+
+2. **🐛 Bug Report** - For defects and issues
+   - Detailed reproduction steps
+   - Expected vs actual behavior
+   - Severity and priority classification
+   - Environment details
+
+3. **🔧 Technical Debt** - For code quality improvements
+   - Code refactoring needs
+   - Architecture improvements
+   - Testing gaps
+   - Documentation updates
+
 ### Issue Labels for User Stories
 
 Recommended labels:
 
-- **Type**: `user-story`, `technical-story`, `bug-story`, `spike`
+- **Type**: `user-story`, `technical-story`, `bug`, `technical-debt`, `spike`
 - **Priority**: `priority-high`, `priority-medium`, `priority-low`
-- **Status**: `needs-estimation`, `ready`, `in-progress`, `blocked`, `in-review`
+- **Severity** (bugs): `severity-critical`, `severity-high`, `severity-medium`, `severity-low`
+- **Status**: `needs-estimation`, `needs-triage`, `ready`, `in-progress`, `blocked`, `in-review`
 - **Epic**: `epic-extraction`, `epic-transformation`, `epic-loading`, etc.
 - **Size**: `size-S`, `size-M`, `size-L`, `size-XL`
 - **Sprint**: `sprint-1`, `sprint-2`, etc.

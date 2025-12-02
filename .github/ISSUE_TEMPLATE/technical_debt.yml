@@ -1,0 +1,293 @@
+name: 🔧 Technical Debt
+description: Document technical debt that needs to be addressed
+title: "[DEBT]: "
+labels: ["technical-debt", "needs-estimation"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Technical Debt Template
+
+        Technical debt represents code, architecture, or process issues that need improvement.
+        While not bugs, addressing technical debt improves code quality, maintainability, and team velocity.
+
+        ---
+
+  - type: input
+    id: debt-id
+    attributes:
+      label: Debt ID (Optional)
+      description: "If tracking in backlog, provide ID (e.g., DEBT-001)"
+      placeholder: "DEBT-XXX-001"
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Technical Debt Summary
+      description: Brief description of the technical debt
+      placeholder: "Refactor WorkzoneService to reduce code duplication and improve testability"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: debt-type
+    attributes:
+      label: Type of Technical Debt
+      description: What category does this fall into?
+      options:
+        - Code Quality - Duplication, complexity, code smells
+        - Architecture - Design issues, coupling, structure
+        - Testing - Missing tests, low coverage, flaky tests
+        - Documentation - Missing or outdated docs
+        - Performance - Inefficiencies, optimization opportunities
+        - Security - Security vulnerabilities or weaknesses
+        - Dependencies - Outdated libraries, deprecated packages
+        - Configuration - Hard-coded values, config improvements
+        - Infrastructure - Deployment, CI/CD, tooling issues
+        - Process - Development workflow improvements
+        - Other
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is addressing this debt?
+      options:
+        - Critical - Blocking development, security risk
+        - High - Significantly impacts team velocity
+        - Medium - Moderate impact on maintainability
+        - Low - Minor improvement, nice to have
+      default: 2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact if Not Addressed
+      description: What happens if we don't fix this?
+      options:
+        - High - Will cause major problems soon
+        - Medium - Will slow down development over time
+        - Low - Minor ongoing inconvenience
+      default: 1
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Problem Description
+      description: Detailed description of the technical debt and why it exists
+      value: |
+        **Current Situation:**
+        Describe the current state of the code/architecture/process
+
+        **Why This is Technical Debt:**
+        Explain why this is problematic and needs to be addressed
+
+        **How It Happened:**
+        (Optional) Context on how this debt accumulated
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected-areas
+    attributes:
+      label: Affected Areas
+      description: Which parts of the codebase are affected?
+      placeholder: |
+        - src/pipeline/workzones/service.py
+        - src/pipeline/resources/service.py
+        - tests/unit/test_workzones.py
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Code Examples (Optional)
+      description: Show specific examples of the problematic code
+      placeholder: |
+        ```python
+        # Current problematic code
+        def process_workzone(self, wz):
+            # 50 lines of complex nested logic
+            # Duplicated in 3 different places
+            ...
+        ```
+      render: python
+
+  - type: textarea
+    id: consequences
+    attributes:
+      label: Current Consequences
+      description: What problems is this debt causing right now?
+      placeholder: |
+        - Developers spend 2+ hours making simple changes
+        - Code is difficult to test
+        - New bugs introduced frequently
+        - Onboarding new developers is slow
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: How should this debt be addressed?
+      value: |
+        **Recommended Approach:**
+        Describe the proposed solution
+
+        **Alternative Approaches:**
+        List other possible solutions considered
+
+        **Benefits of Fixing:**
+        - Benefit 1
+        - Benefit 2
+
+        **Risks/Trade-offs:**
+        - What might break or change
+        - Migration considerations
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know this debt has been properly addressed?
+      value: |
+        - [ ] Code refactored to eliminate duplication
+        - [ ] Test coverage increased to 90%+
+        - [ ] Documentation updated
+        - [ ] No breaking changes to public APIs
+        - [ ] All existing tests still pass
+        - [ ] Performance benchmarks maintained or improved
+    validations:
+      required: true
+
+  - type: dropdown
+    id: effort-estimate
+    attributes:
+      label: Effort Estimate
+      description: Rough estimate of work required
+      options:
+        - Small - Few hours to 1 day
+        - Medium - 2-3 days
+        - Large - 1 week
+        - Very Large - Multiple weeks
+        - Unknown - Needs investigation
+      default: 4
+    validations:
+      required: true
+
+  - type: input
+    id: story-points
+    attributes:
+      label: Story Points (Optional)
+      description: If estimated in story points
+      placeholder: "5"
+
+  - type: dropdown
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Does this depend on other work?
+      options:
+        - None - Can be done independently
+        - Soft - Would be easier after other work
+        - Hard - Requires other work to be completed first
+      default: 0
+
+  - type: textarea
+    id: dependency-details
+    attributes:
+      label: Dependency Details (Optional)
+      description: If dependencies exist, describe them
+      placeholder: |
+        - Depends on #123 (Database migration)
+        - Should be done after refactoring authentication
+        - Blocks #456 (New feature implementation)
+
+  - type: textarea
+    id: related-issues
+    attributes:
+      label: Related Issues
+      description: Link to related issues, PRs, or discussions
+      placeholder: |
+        - Related to #123
+        - Discussed in Slack: [link]
+        - Similar to technical debt item #456
+
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Metrics (Optional)
+      description: Quantifiable metrics showing the impact of this debt
+      placeholder: |
+        - Current test coverage: 65%
+        - Lines of duplicated code: ~500
+        - Average time to fix bugs in this area: 4 hours
+        - Number of bugs in past 3 months: 12
+
+  - type: input
+    id: target-sprint
+    attributes:
+      label: Target Sprint (Optional)
+      description: When should this be addressed?
+      placeholder: "Sprint 5"
+
+  - type: dropdown
+    id: can-wait
+    attributes:
+      label: Can This Wait?
+      description: Is this urgent or can it be deferred?
+      options:
+        - No - Needs immediate attention
+        - Yes - Can wait for planned refactoring sprint
+        - Maybe - Depends on team capacity
+      default: 1
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 📋 Implementation Checklist
+
+        When addressing this technical debt:
+
+        - [ ] Break down into smaller tasks if needed
+        - [ ] Discuss approach with team
+        - [ ] Write tests before refactoring (if not TDD)
+        - [ ] Make incremental changes
+        - [ ] Update documentation
+        - [ ] Review impact on dependent code
+        - [ ] Validate performance hasn't degraded
+        - [ ] Update related issues and docs
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 💡 Best Practices
+
+        **When to Create Technical Debt Issues:**
+        - During code reviews: "This works but should be refactored"
+        - When adding workarounds or quick fixes
+        - When duplicating code with intent to consolidate later
+        - When deferring improvements due to time constraints
+
+        **When NOT to Create Technical Debt Issues:**
+        - For bugs (use bug report template)
+        - For new features (use user story template)
+        - For one-time tasks
+        - For preference differences without clear benefit
