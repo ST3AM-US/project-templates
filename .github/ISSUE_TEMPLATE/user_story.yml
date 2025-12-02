@@ -1,0 +1,227 @@
+name: 🎯 User Story
+description: Create a new user story following the "As a, I want, So that" format
+title: "[US-{EPIC}-{NUMBER}]: "
+labels: ["user-story", "needs-estimation"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## User Story Template
+
+        This template follows the **3 C's** of user stories:
+        - **Card**: The issue itself with core story and acceptance criteria
+        - **Conversation**: Comments and discussions that elaborate on details
+        - **Confirmation**: Acceptance criteria checklist that defines "done"
+
+        ---
+
+  - type: input
+    id: story-id
+    attributes:
+      label: Story ID
+      description: "Format: US-{EPIC}-{NUMBER} (e.g., US-WZ-001, US-API-005)"
+      placeholder: "US-XXX-001"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user-role
+    attributes:
+      label: User Role
+      description: "As a..."
+      options:
+        - User
+        - Admin
+        - Data Engineer
+        - System Administrator
+        - Operations Manager
+        - Developer
+        - Field Service Coordinator
+        - API Consumer
+        - System
+        - Other (specify in story)
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-want
+    attributes:
+      label: I want to...
+      description: What capability or feature does the user need?
+      placeholder: "retrieve all resources from the external API"
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-benefit
+    attributes:
+      label: So that...
+      description: What business value or benefit does this provide?
+      placeholder: "I can work with the latest data from the system"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context (Optional)
+      description: Additional background information or rationale
+      placeholder: "This feature is needed because..."
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: |
+        Specific, testable criteria that define when this story is "done".
+        Use checkboxes for tracking progress.
+      value: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+        - [ ] Criterion 3
+        - [ ] All unit tests passing
+        - [ ] Integration tests passing
+        - [ ] Documentation updated
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-details
+    attributes:
+      label: Technical Details (Optional)
+      description: Implementation considerations, API contracts, architecture patterns
+      placeholder: |
+        - Input:
+        - Output:
+        - API/Interface:
+        - Configuration:
+        - Performance:
+
+  - type: textarea
+    id: test-strategy
+    attributes:
+      label: Test Strategy (Optional)
+      description: Testing approach for this story
+      placeholder: |
+        - Unit: X tests covering business logic
+        - Integration: Y tests for API endpoints
+        - E2E: Z tests for complete workflows
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this story?
+      options:
+        - High
+        - Medium
+        - Low
+      default: 1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: story-points
+    attributes:
+      label: Story Points
+      description: Estimated effort (Fibonacci scale)
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "5"
+        - "8"
+        - "13"
+        - "Not Estimated"
+      default: 6
+
+  - type: input
+    id: sprint
+    attributes:
+      label: Target Sprint
+      description: Which sprint is this planned for?
+      placeholder: "Sprint 3"
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Other stories or issues this depends on (use #issue-number)
+      placeholder: |
+        - Depends on #123 (US-API-001)
+        - Blocks #456 (US-UI-005)
+
+  - type: dropdown
+    id: epic
+    attributes:
+      label: Epic / Feature Area
+      description: Which epic or feature area does this belong to?
+      options:
+        - Foundation & Setup
+        - Data Extraction
+        - Data Filtering
+        - Data Enrichment
+        - Data Transformation
+        - Data Loading
+        - Pipeline Orchestration
+        - Configuration Management
+        - Monitoring & Logging
+        - Testing & Validation
+        - Documentation
+        - API Layer
+        - CLI Layer
+        - Web Interface
+        - Multi-Instance Management
+        - Other (specify in context)
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 📋 Definition of Done
+
+        A story is **Done** when:
+        - [ ] All acceptance criteria met
+        - [ ] Unit tests written and passing (100% business logic)
+        - [ ] Integration tests passing
+        - [ ] Code reviewed and approved
+        - [ ] Documentation updated
+        - [ ] No blocking issues or bugs
+        - [ ] Validated by product owner
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 💬 Conversation Guidelines
+
+        Use issue comments for:
+        - **Clarifying questions** about requirements
+        - **Technical discussions** about implementation
+        - **Design decisions** and trade-offs
+        - **Links to related discussions** (Slack, PRs, docs)
+        - **Progress updates** during implementation
+        - **Blockers** or issues encountered
+
+        Link to external conversations: `Discussed in Slack: [link]`
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Story Checklist
+      description: Track the story lifecycle
+      options:
+        - label: Story refined and estimated
+        - label: Acceptance criteria validated
+        - label: Dependencies identified
+        - label: Technical approach agreed
+        - label: Assigned to sprint
+        - label: Implementation started
+        - label: Code review completed
+        - label: Tests passing
+        - label: Documentation complete
+        - label: Story accepted

@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 Documentation
+    url: https://github.com/{OWNER}/{REPO}/blob/main/docs/USER_STORIES.md
+    about: Read the user stories documentation and templates
+  - name: 🏗️ Architecture
+    url: https://github.com/{OWNER}/{REPO}/blob/main/docs/ARCHITECTURE.md
+    about: Review the project architecture and design patterns
+  - name: 🧪 Testing Strategy
+    url: https://github.com/{OWNER}/{REPO}/blob/main/docs/TESTING_STRATEGY.md
+    about: Understand the TDD methodology and testing approach
