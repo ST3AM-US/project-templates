@@ -41,7 +41,7 @@ This project uses GitHub Issues to manage user stories following the **3 C's** m
 **Using the Issue Template:**
 
 1. Go to **Issues** → **New Issue**
-2. Select **🎯 User Story** template
+2. Select **User Story** template
 3. Fill in the form:
    - **Story ID**: US-{EPIC}-{NUMBER} format
    - **User Role**: Who needs this capability
@@ -72,18 +72,18 @@ This project uses GitHub Issues to manage user stories following the **3 C's** m
 
 This project provides three GitHub issue templates:
 
-1. **🎯 User Story** - For new features and functionality
+1. **User Story** - For new features and functionality
    - Use the "As a, I want, So that" format
    - Include acceptance criteria checklist
    - Track with story points and sprint assignment
 
-2. **🐛 Bug Report** - For defects and issues
+2. **Bug Report** - For defects and issues
    - Detailed reproduction steps
    - Expected vs actual behavior
    - Severity and priority classification
    - Environment details
 
-3. **🔧 Technical Debt** - For code quality improvements
+3. **Technical Debt** - For code quality improvements
    - Code refactoring needs
    - Architecture improvements
    - Testing gaps
@@ -163,7 +163,7 @@ Permanent solution tracked in #456.
 ## Progress Update
 ✅ Completed acceptance criteria 1-3
 🔄 Working on criterion 4 (error handling)
-📅 On track for Sprint 3 completion
+On track for Sprint 3 completion
 ```
 
 ### Converting This Document to GitHub Issues

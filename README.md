@@ -166,6 +166,16 @@ For questions or issues with the templates:
 - Check the `docs/` directory for detailed guidance
 - Consult `CLAUDE.md` for Claude Code integration
 
+## Emoticon Usage
+
+This template uses a minimal set of approved emoticons for clarity:
+- ✅ Green checkmark - Completed items and success states
+- ❌ Red X - Errors and failures
+- ⚠️ Warning - Warnings and cautions
+- 🔄 Refresh - In-progress items
+
+No other emoticons are used to maintain a professional tone.
+
 ---
 
 **Template Version**: 1.0.0

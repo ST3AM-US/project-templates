@@ -1,4 +1,4 @@
-name: 🔧 Technical Debt
+name: Technical Debt
 description: Document technical debt that needs to be addressed
 title: "[DEBT]: "
 labels: ["technical-debt", "needs-estimation"]
@@ -260,7 +260,7 @@ body:
       value: |
         ---
 
-        ## 📋 Implementation Checklist
+        ## Implementation Checklist
 
         When addressing this technical debt:
 
@@ -278,7 +278,7 @@ body:
       value: |
         ---
 
-        ## 💡 Best Practices
+        ## Best Practices
 
         **When to Create Technical Debt Issues:**
         - During code reviews: "This works but should be refactored"

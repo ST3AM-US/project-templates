@@ -1,4 +1,4 @@
-name: 🐛 Bug Report
+name: Bug Report
 description: Report a bug or defect in the system
 title: "[BUG]: "
 labels: ["bug", "needs-triage"]
@@ -194,7 +194,7 @@ body:
       value: |
         ---
 
-        ## 🔍 Investigation Checklist
+        ## Investigation Checklist
 
         For developers investigating this bug:
 
@@ -211,7 +211,7 @@ body:
       value: |
         ---
 
-        ## ✅ Resolution Checklist
+        ## Resolution Checklist
 
         Before closing this bug:
 

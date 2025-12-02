@@ -109,3 +109,15 @@ All code examples should:
 - Use type hints where applicable
 - Include docstrings for classes and public methods
 - Show realistic parameter names and values
+
+## Emoticon Usage Policy
+
+**Approved Emoticons Only:** Only the following emoticons may be used in templates:
+- ✅ Green checkmark - For completed items and success states
+- ❌ Red X - For errors and failures
+- ⚠️ Warning - For warnings and cautions
+- 🔄 Refresh/Reload - For in-progress items
+
+**Prohibited:** All other emoticons are prohibited to maintain professional tone. This includes but is not limited to: 🎯 🐛 🔧 📋 🔍 💡 💬 📖 🏭 🧪 🤖 📅 and any other emoji not explicitly listed above.
+
+When updating templates or creating new content, do not add emoticons beyond the approved list.

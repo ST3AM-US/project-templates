@@ -1,4 +1,4 @@
-name: 🎯 User Story
+name: User Story
 description: Create a new user story following the "As a, I want, So that" format
 title: "[US-{EPIC}-{NUMBER}]: "
 labels: ["user-story", "needs-estimation"]
@@ -181,7 +181,7 @@ body:
       value: |
         ---
 
-        ## 📋 Definition of Done
+        ## Definition of Done
 
         A story is **Done** when:
         - [ ] All acceptance criteria met
@@ -197,7 +197,7 @@ body:
       value: |
         ---
 
-        ## 💬 Conversation Guidelines
+        ## Conversation Guidelines
 
         Use issue comments for:
         - **Clarifying questions** about requirements
